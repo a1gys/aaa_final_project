@@ -24,7 +24,8 @@ class BasePizza:
         if not isinstance(other, BasePizza):
             raise TypeError(f"{other} variable is not instance of Pizza")
 
-        return self.toppings == other.toppings and self.size == other.size
+        return sorted(self.toppings) == sorted(other.toppings) and \
+            self.size == other.size
 
     def __repr__(self):
         raise f"Custom Pizza: {', '.join(self.toppings)}"
